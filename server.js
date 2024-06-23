@@ -2,7 +2,6 @@ import express from 'express';
 import cors from 'cors';
 import pg from 'pg';
 import config from './config.json' with { type: "json" }
-console.log("===== config: ", config);
 
 const app = express()
 app.use(express.json());
