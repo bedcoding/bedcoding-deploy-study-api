@@ -12,15 +12,8 @@ app.use(cors());
 const port = 4000;
 const hostname = 'asmbedcoding.kro.kr';
 
-const key = fs.readFileSync(`
-    /etc/letsencrypt/live/${hostname}/privkey.pem`, 
-    { encoding: "utf-8" }
-);
-
-const cert = fs.readFileSync(
-    `/etc/letsencrypt/live/${hostname}/cert.pem`, 
-    { encoding: "utf-8" }
-);
+const key = fs.readFileSync(`/etc/letsencrypt/live/${hostname}/privkey.pem`, { encoding: "utf-8" });
+const cert = fs.readFileSync(`/etc/letsencrypt/live/${hostname}/cert.pem`, { encoding: "utf-8" });
 
 const server = https.createServer({
     key, cert,
